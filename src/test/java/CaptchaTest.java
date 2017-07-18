@@ -79,4 +79,45 @@ public class CaptchaTest {
         String expected = "-";
         Assert.assertEquals(expected, captcha.getOperator());
     }
+
+    @Test
+    public void secondPatternLeftOperandShouldBe1(){
+        Captcha captcha = new Captcha(Captcha.STRING_SECOND_PATTERN, 1, dummy_operator, dummy_right);
+        String expected = "1";
+        Assert.assertEquals(expected, captcha.getLeft());
+    }
+    @Test
+    public void secondPatternLeftOperandShouldBe2(){
+        Captcha captcha = new Captcha(Captcha.STRING_SECOND_PATTERN, 2, dummy_operator, dummy_right);
+        String expected = "2";
+        Assert.assertEquals(expected, captcha.getLeft());
+    }
+
+    @Test
+    public void secondPatternLeftOperandShouldBe9(){
+        Captcha captcha = new Captcha(Captcha.STRING_SECOND_PATTERN, 9, dummy_operator, dummy_right);
+        String expected = "9";
+        Assert.assertEquals(expected, captcha.getLeft());
+    }
+
+    @Test
+    public void secondPatternRightOperandShouldBeOne() {
+        Captcha captcha = new Captcha(Captcha.STRING_SECOND_PATTERN,dummy_left,dummy_operator,1);
+        String expected="One";
+        Assert.assertEquals(expected, captcha.getRight());
+    }
+    @Test
+    public void secondPatternRightOperandShouldBeTwo() {
+        Captcha captcha = new Captcha(Captcha.STRING_SECOND_PATTERN,dummy_left,dummy_operator,2);
+        String expected="Two";
+        Assert.assertEquals(expected, captcha.getRight());
+    }
+
+    @Test
+
+    public void secondPatternRightOperandShouldBeNine() {
+        Captcha captcha = new Captcha(Captcha.STRING_SECOND_PATTERN,dummy_left,dummy_operator,9);
+        String expected="Nine";
+        Assert.assertEquals(expected, captcha.getRight());
+    }
 }
